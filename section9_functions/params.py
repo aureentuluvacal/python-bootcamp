@@ -14,3 +14,9 @@ def exponent(num, power = 2):
 
 print(exponent(4,3))
 print(exponent(5))
+
+# Param ordering
+#  1. parameters
+#  2. *args 
+#  3. default parameters
+#  4. **kwargs
