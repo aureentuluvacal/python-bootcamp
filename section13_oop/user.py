@@ -26,18 +26,34 @@ class User:
 
   @classmethod
   def display_active_users(cls):
-    print(f"There are currently {cls.active_users} users online.")
+    return f"There are currently {cls.active_users} users online."
 
   @classmethod
   def normalize_arguments(cls, args_str):
     first, last, age = args_str.split(",")
     return cls(first, last, int(age))
 
-user1 = User("Caryssa", "Perez", 24)
-user2 = User.normalize_arguments("Irma, Mesa, 25")
+class Moderator(User):
+  active_mods = 0 
 
-print(user1.full_name())
-print(user2.full_name())
+  def __init__(self, first, last, age, community):
+    super().__init__(first, last, age)
+    self.community = community
+    Moderator.active_mods += 1
+
+  def remove_post(self):
+    return f"{self.full_name()} removed a post from the {self.community}"
+
+  @classmethod
+  def display_active_mods(cls):
+     return f"There are currently {cls.active_mods} moderators online."
+
+user = User("Caryssa", "Perez", 24)
+moderator= Moderator("Irma", "Mesa", 25, "Filming")
+
+print(user.full_name())
+print(moderator.full_name())
 print(User.display_active_users())
-print(user1.logout())
+print(Moderator.display_active_mods())
+print(user.logout())
 print(User.active_users)
