@@ -15,7 +15,3 @@ class Card:
 
   def __repr__(self):
     return f"{self.value} of {self.suit}"
-
-c = Card("A", "Spades")
-
-print(c)

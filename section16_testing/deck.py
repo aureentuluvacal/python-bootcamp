@@ -39,14 +39,3 @@ class Deck:
 
   def deal_hand(self, hand_size):
     return self._deal(hand_size)
-
-d = Deck()
-print(d)
-d.shuffle()
-card = d.deal_card()
-print(card)
-hand = d.deal_hand(5)
-print(hand)
-
-for card in d:
-  print card
