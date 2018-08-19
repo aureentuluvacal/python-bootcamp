@@ -32,4 +32,4 @@ d = soup.select("[data-example]")
 data = soup.body.contents[1].next_sibling.next_sibling
 
 print(data)
-print(d2)
+# print(d2)
